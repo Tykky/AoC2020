@@ -12,10 +12,10 @@ int main() {
 
     for (size_t i = 0; i < n; i++)
     {
-        int a = input[i];
+        int a = stoi(input[i]);
         auto it = map.find(sum-a);
         if (it != map.end()) {
-            int b = input[(*it).second];
+            int b = stoi(input[(*it).second]);
             cout << a*b << endl;
         }   else {
             map.insert({a,i});

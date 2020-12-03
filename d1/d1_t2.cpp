@@ -10,13 +10,13 @@ int main() {
     unordered_map<int,int> map;
     for (size_t i = 0; i < n; i++)
     {
-        int a = std::stoi(input[i]);
+        int a = stoi(input[i]);
         for (size_t j = 0; j < n; j++)
         {
-            int b = std::stoi(input[j]);
+            int b = stoi(input[j]);
             auto it = map.find(sum-a-b);
             if(it != map.end()) {
-                int c = std::stoi(input[(*it).second]);
+                int c = stoi(input[(*it).second]);
                 cout << a*b*c << endl;
                 goto end;
             } else {
