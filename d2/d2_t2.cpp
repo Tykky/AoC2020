@@ -34,4 +34,5 @@ int main() {
         if(password[low-1] == c ^ password[high-1] == c) validcount++;
     }
     cout << validcount << endl;
+    return 0;
 }

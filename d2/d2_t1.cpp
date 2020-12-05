@@ -41,4 +41,5 @@ int main() {
         if(counter >= low && counter <= high) validcount++;
     }
     cout << validcount << endl;
+    return 0;
 }
