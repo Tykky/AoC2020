@@ -21,7 +21,6 @@ int numberOfTrees(int right, int down) {
     return trees;
 }
 
-
 int main() {
     int slopes[][2] = {{1,1},{3,1},{5,1},{7,1},{1,2}};
     long product = 1;
