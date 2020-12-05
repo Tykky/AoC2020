@@ -21,5 +21,5 @@ int main() {
             map.insert({a,i});
         }
     }
-    
+    return 0;
 }
