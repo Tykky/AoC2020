@@ -4,7 +4,8 @@
 
 using namespace std;
 
-int main() {
+int main() 
+{
 
     const int n = 1000;
     readFile("input.txt",n);

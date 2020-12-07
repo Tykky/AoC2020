@@ -14,10 +14,12 @@ int main() {
     {
         int a = stoi(input[i]);
         auto it = map.find(sum-a);
-        if (it != map.end()) {
+        if (it != map.end()) 
+        {
             int b = stoi(input[(*it).second]);
             cout << a*b << endl;
-        }   else {
+        }   else 
+        {
             map.insert({a,i});
         }
     }

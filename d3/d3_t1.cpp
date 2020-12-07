@@ -2,7 +2,8 @@
 
 using namespace std;
 
-int main() {
+int main() 
+{
 
     const int n = 323;
     readFile("input.txt",n);

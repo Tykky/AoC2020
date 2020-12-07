@@ -4,7 +4,8 @@
 
 using namespace std;
 
-int main() {
+int main() 
+{
 
     const int n = 1000;
     readFile("input.txt",n);
@@ -34,9 +35,7 @@ int main() {
         int counter = 0;
         for (size_t j = 0; j < password.length(); j++)
         {
-            if(password[j] == c) {
-                counter++;
-            }
+            if(password[j] == c) counter++;
         }
         if(counter >= low && counter <= high) validcount++;
     }

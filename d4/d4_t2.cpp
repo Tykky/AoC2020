@@ -8,12 +8,40 @@ const string keys[] = {"byr","iyr","eyr","hgt","hcl","ecl","pid"};
 
 bool isvalid(unordered_map<string,string> passport) 
 {
-    for(string key : keys) 
+    string values[7];
+    for (size_t i = 0; i < 7; i++)
     {
-        if(passport.find(key) == passport.end()) 
-        {
-            return false;
-        }
+        auto it = passport.find(keys[i]);
+        string value = "";
+        if(it != passport.end()) value = it->second;
+        values[i] = value;
+    }
+
+    const int byr = 0;
+    const int iyr = 1;
+    const int eyr = 2;
+    const int hgt = 3;
+    const int hcl = 4;
+    const int ecl = 5;
+    const int pid = 6;
+
+    if(!(values[0] != "" && stoi(values[byr]) >= 1920 && stoi(values[byr]) <= 2002)) return false;
+    if(!(values[1] != "" && stoi(values[iyr]) >= 2010 && stoi(values[iyr]) <= 2020)) return false;
+    if(!(values[2] != "" && stoi(values[eyr]) >= 2020 && stoi(values[eyr]) <= 2030)) return false;
+
+    if(values[hgt].length() <= 2)
+    {
+        return false;
+    } else 
+    {
+        int value = stoi(values[3].substr(0,values[3].length()-2));
+        string unit = values[3].substr(values[3].length()-2,2);
+        if(unit == "cm" && !(value >= 150 && value <= 193)) return false;
+        if(unit == "in" && !(value >= 59 && value <= 76)) return false;
+    }
+    if(!(values[4][0] == '#' && values[4].size() == 7)) // hcl
+    { 
+        return false;
     }
     return true;
 }

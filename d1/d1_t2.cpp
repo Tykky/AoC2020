@@ -3,7 +3,8 @@
 
 using namespace std;
 
-int main() {
+int main() 
+{
     const int sum = 2020;
     const int n = 200;
     readFile("input.txt",n);
@@ -15,11 +16,13 @@ int main() {
         {
             int b = stoi(input[j]);
             auto it = map.find(sum-a-b);
-            if(it != map.end()) {
+            if(it != map.end()) 
+            {
                 int c = stoi(input[(*it).second]);
                 cout << a*b*c << endl;
                 goto end;
-            } else {
+            } else 
+            {
                 map.insert({b,j});
             }
         }
